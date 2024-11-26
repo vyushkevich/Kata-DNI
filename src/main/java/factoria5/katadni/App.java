@@ -1,17 +1,15 @@
 package factoria5.katadni;
 
-/**
- * Hello world!
- */
-public final class App {
-    private App() {
-    }
+import factoria5.katadni.Controller.DniController;
+import factoria5.katadni.Model.DniCalculator;
+import factoria5.katadni.View.ConsoleView;
 
-    /**
-     * Says hello to the world.
-     * @param args The arguments of the program.
-     */
+public class App {
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        DniCalculator model = new DniCalculator();
+        ConsoleView view = new ConsoleView();
+        DniController controller = new DniController(model, view);
+
+        controller.run();
     }
 }
