@@ -12,4 +12,5 @@ Deberá de repetirse el proceso hasta que el usuario introduzca un número váli
 Se deberá realizar tests unitarios (coverage mínimo 70%)
 # Entregables:
 Repositorio de GitHub (enlace)
+
 Captura de pantalla de la sección "Testing" de visual studio code donde se aprecia el coverage de los tests
