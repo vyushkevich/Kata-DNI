@@ -1,5 +1,6 @@
 package factoria5.katadni;
 
+import factoria5.katadni.Model.DniCalculator;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
@@ -9,17 +10,19 @@ public class DniCalculatorTest {
 
     @Test
     void testCalculateDniLetter() {
-        assertEquals('T', calculator.calculateDniLetter(0));
-        assertEquals('R', calculator.calculateDniLetter(1));
-        assertEquals('A', calculator.calculateDniLetter(3));
-        assertEquals('E', calculator.calculateDniLetter(99999999));
+        // Проверка букв для различных чисел
+        assertEquals('T', calculator.calculateDniLetter(0)); // Остаток 0 -> T
+        assertEquals('R', calculator.calculateDniLetter(1)); // Остаток 1 -> R
+        assertEquals('A', calculator.calculateDniLetter(3)); // Остаток 3 -> A
+        assertEquals('R', calculator.calculateDniLetter(99999999)); // Остаток 4 -> R (не E)
     }
 
     @Test
     void testIsValidDni() {
+        // Проверка на валидность номера DNI
         assertTrue(calculator.isValidDni("12345678"));
-        assertFalse(calculator.isValidDni("123456789")); // More than 8 digits
-        assertFalse(calculator.isValidDni("abcd")); // Non-numeric input
-        assertFalse(calculator.isValidDni("-123")); // Negative number
+        assertFalse(calculator.isValidDni("123456789")); // Больше 8 цифр
+        assertFalse(calculator.isValidDni("abcd")); // Некорректный ввод
+        assertFalse(calculator.isValidDni("-123")); // Отрицательное число
     }
 }
