@@ -1,7 +1,7 @@
 package factoria5.katadni.Controller;
 
-import model.DniCalculator;
-import view.ConsoleView;
+import factoria5.katadni.Model.DniCalculator;
+import factoria5.katadni.View.ConsoleView;
 
 public class DniController {
     private final DniCalculator model;
